@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
-const mongoURI = 'mongodb+srv://knb10kagami:hOIgGXAkQMOsfjcX@cluster0.v9fszi5.mongodb.net/gofoomern?retryWrites=true&w=majority';
+require("dotenv").config();
 
 const mongoDB = async () => {
     try {
-        await mongoose.connect(mongoURI, { useNewUrlParser: true });
+        await mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
         console.log("Connected to MongoDB");
 
         //perform operations on the database
